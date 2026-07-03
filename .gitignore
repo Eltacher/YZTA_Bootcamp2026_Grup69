@@ -1,0 +1,26 @@
+# Sanal ortam
+venv/
+.venv/
+env/
+
+# Python önbellekleri
+__pycache__/
+*.py[cod]
+
+# Gizli anahtarlar ve ortam değişkenleri (HF_TOKEN vb.)
+.env
+.env.*
+!.env.example
+
+# Araç önbellekleri
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / editör
+.vscode/
+.idea/
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
