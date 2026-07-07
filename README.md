@@ -29,6 +29,13 @@ Sağlık / Semptom Takipçisi ve Triyaj Uygulaması, kullanıcıların semptomla
 - Laboratuvar analizi (Sprint 2)
 - Akıllı ilaç tarayıcı (Sprint 2)
 
+### Hedef Kitle
+
+- Yaşadığı semptomlara göre hangi polikliniğe başvuracağını bilmeyen kullanıcılar
+- Sağlık şikayetlerini ön değerlendirmeden geçirmek isteyen kişiler
+- Laboratuvar sonuçlarını daha anlaşılır görmek isteyen kullanıcılar
+- Mobil sağlık asistanı deneyimi arayan kullanıcılar
+
 ---
 
 # Sprint 1
@@ -70,23 +77,12 @@ Sprint boyunca günlük toplantılar gerçekleştirilmiş, görev dağılımı v
 
 Sprint sonunda planlanan görevlerin tamamı tamamlanmıştır.
 
-> README içerisine board ekran görüntülerini ekleyin:
-
-```md
-![](images/board1.png)
-![](images/board2.png)
-![](images/board3.png)
-```
-
 ## Ürün Durumu
 
 Sprint 1 sonunda backend çekirdeği çalışır durumdadır.
 
 ### Ekran Görüntüleri
 
-Aşağıdaki yolları kendi dosya adlarınıza göre düzenleyin:
-
-```md
 <p align="center">
 <img src="images/ss_anagostergepaneli_s1.png" width="180"/>
 <img src="images/ss_seslisemptom_s1.png" width="180"/>
@@ -97,7 +93,6 @@ Aşağıdaki yolları kendi dosya adlarınıza göre düzenleyin:
 <img src="images/ss_ilactarayici_s1.png" width="180"/>
 <img src="images/ss_font_s1.png" width="180"/>
 </p>
-```
 
 ## Sprint Review
 
