@@ -24,8 +24,9 @@ class Settings:
     def __init__(self) -> None:
         self.ai_api_key: str = os.getenv("AI_API_KEY", "")
         self.ai_model: str = os.getenv("AI_MODEL", "")
-        # "auto": istek, modeli yayınlayan ilk uygun sağlayıcıya yönlendirilir.
-        self.ai_provider: str = os.getenv("AI_PROVIDER", "auto")
+        # OpenAI uyumlu API'nin taban adresi; sağlayıcı değişikliği yalnızca
+        # bu değerin .env'de güncellenmesiyle yapılır.
+        self.ai_base_url: str = os.getenv("AI_BASE_URL", "https://api.wiro.ai/v1")
 
 
 @lru_cache

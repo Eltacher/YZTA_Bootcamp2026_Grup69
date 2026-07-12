@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    # .env'deki değişkenler (AI_API_KEY, AI_MODEL, AI_BASE_URL) konteynere aktarılır.
+    # required: false -> .env henüz oluşturulmadıysa da konteyner ayağa kalkar
+    # (bu durumda triyaj ucu açıklayıcı 503 döndürür).
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Windows/macOS bind mount'larında dosya değişikliği olayları konteynere
+      # her zaman ulaşmaz; polling zorlanarak hot-reload'un tüm ekip
+      # makinelerinde çalışması garanti edilir.
+      WATCHFILES_FORCE_POLLING: "true"
+    volumes:
+      # Yalnızca kaynak kod paketi bağlanır (imajdaki /app/app üzerine biner);
+      # requirements.txt değişirse "docker compose up --build" gerekir.
+      - ./app:/app/app
+    # Geliştirme modu: kod değişikliğinde uvicorn kendini yeniden başlatır.
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

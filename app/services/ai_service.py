@@ -1,15 +1,15 @@
-"""Hugging Face Inference Providers üzerinden triyaj analizi yapan servis katmanı."""
+"""OpenAI uyumlu sağlayıcı üzerinden triyaj analizi yapan servis katmanı."""
 
 import json
 import re
 
-from huggingface_hub import AsyncInferenceClient
+from openai import AsyncOpenAI
 from pydantic import ValidationError
 
 from app.core.config import Settings
 from app.schemas.triage_schema import TriageResponse
 
-# Serverless tarafında soğuk başlatmalar olabildiği için tolerans yüksek tutuldu.
+# Sağlayıcı tarafında soğuk başlatma/kuyruk olabileceği için tolerans yüksek tutuldu.
 REQUEST_TIMEOUT_SECONDS = 60.0
 MAX_OUTPUT_TOKENS = 512
 # Düşük sıcaklık -> yaratıcılık değil tutarlılık: şemaya sadık, tekrarlanabilir çıktı.
@@ -66,9 +66,9 @@ class AIService:
                 "AI_MODEL tanımlı değil. Kullanılacak modelin kimliğini .env "
                 "dosyasında belirtin (şablon: .env.example)."
             )
-        self._client = AsyncInferenceClient(
-            model=settings.ai_model,
-            provider=settings.ai_provider,
+        self._model = settings.ai_model
+        self._client = AsyncOpenAI(
+            base_url=settings.ai_base_url,
             api_key=settings.ai_api_key,
             timeout=REQUEST_TIMEOUT_SECONDS,
         )
@@ -76,7 +76,8 @@ class AIService:
     async def analyze_symptoms(self, symptoms: str) -> TriageResponse:
         """Semptom açıklamasını modele gönderir, yanıtı şemayla doğrulayıp döndürür."""
         try:
-            completion = await self._client.chat_completion(
+            completion = await self._client.chat.completions.create(
+                model=self._model,
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": symptoms},
@@ -85,8 +86,10 @@ class AIService:
                 max_tokens=MAX_OUTPUT_TOKENS,
             )
         except Exception as exc:  # ağ, kota, sağlayıcı hataları tek tip domain hatasına sarılır
-            raise AIServiceError(f"Hugging Face çağrısı başarısız oldu: {exc}") from exc
+            raise AIServiceError(f"Yapay zeka sağlayıcısı çağrısı başarısız oldu: {exc}") from exc
 
+        if not completion.choices:
+            raise AIServiceError("Yapay zeka sağlayıcısı boş yanıt döndürdü.")
         raw_output = completion.choices[0].message.content or ""
         return self._parse_output(raw_output)
 

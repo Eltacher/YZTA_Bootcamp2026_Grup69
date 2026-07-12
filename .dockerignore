@@ -1,0 +1,25 @@
+# Sanal ortam ve Python önbellekleri
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Git ve IDE dosyaları
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Gizli değerler — imaja ASLA girmemeli
+.env
+.env.*
+!.env.example
+
+# Docker dosyalarının kendisi ve raporlar
+Dockerfile
+docker-compose.yml
+.dockerignore
+*.pdf
