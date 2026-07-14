@@ -23,6 +23,9 @@ class Settings:
 
     def __init__(self) -> None:
         self.ai_api_key: str = os.getenv("AI_API_KEY", "")
+        # İmzalı (HMAC) kimlik doğrulama moduna geçilirse gerekecek; şu an
+        # sunucu tarafı için x-api-key başlığı yeterli.
+        self.ai_api_secret: str = os.getenv("AI_API_SECRET", "")
         self.ai_model: str = os.getenv("AI_MODEL", "")
         # OpenAI uyumlu API'nin taban adresi; sağlayıcı değişikliği yalnızca
         # bu değerin .env'de güncellenmesiyle yapılır.
