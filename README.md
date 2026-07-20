@@ -121,3 +121,66 @@ Sprint 1 sonunda backend çekirdeği çalışır durumdadır.
 - RAG
 - Laboratuvar analizi
 - Docker hazırlıkları
+
+- # Sprint 2
+
+## Sprint Notları
+
+Sprint 2'de FastAPI tabanlı backend altyapısı Docker ile tam uyumlu hale getirilmiş, Wiro AI entegrasyonu tamamlanarak gerçek yapay zeka tabanlı triyaj yanıtları üretilmeye başlanmıştır. Asenkron görev kuyruğu mimarisi ve model esnekliği sağlanmıştır.
+
+## Sprint İçinde Tamamlanması Tahmin Edilen Puan
+
+**30 Story Point**
+
+## Puan Tamamlama Mantığı
+
+Görevler mimari entegrasyon, üçüncü taraf API adaptör geliştirme, konteynerizasyon ve model optimizasyon süreçleri dikkate alınarak puanlanmıştır.
+
+| Görev | Story Point |
+| --- | --- |
+| Docker konteynerizasyonu ve hot reload | 5 |
+| Wiro AI entegrasyonu ve adaptör katmanı | 8 |
+| Gerçek triyaj ve analiz servisleri | 8 |
+| Asenkron görev kuyruğu ve model yönetimi | 5 |
+| API dokümantasyonu ve test süreçleri | 4 |
+
+## Sprint Backlog
+
+MoSCoW yöntemi kullanılarak önceliklendirme yapılmıştır.
+
+* Must: Docker altyapısı, Wiro AI entegrasyonu, gerçek triyaj API'si
+* Should: Asenkron görev yönetimi, model esnekliği (`.env` üzerinden model değişimi)
+* Could: Mobil yükleme animasyonları için optimizasyon çalışmaları
+* Won't: Gelişmiş RAG boru hattı (Sonraki sprintlere ertelendi)
+
+## Daily Scrum
+
+Sprint boyunca günlük toplantılar gerçekleştirilmiş; Wiro AI'ın görev tabanlı özel adaptör süreci, asenkron yanıt süreleri ve model maliyet/kalite dengeleri düzenli olarak takip edilmiştir.
+
+## Sprint Board Update
+
+Sprint sonunda planlanan görevlerin tamamı başarıyla tamamlanmıştır.
+
+## Ürün Durumu
+
+Sprint 2 sonunda backend sistemi Docker ile ayağa kalkabilir, Wiro AI üzerinden gerçek yapay zeka destekli triyaj (poliklinik önerisi, kırmızı/sarı/yeşil kodlama, gerekçe ve acil bayrağı) yanıtları dönebilir duruma gelmiştir.
+
+## Sprint Review
+
+* Docker ve hot reload altyapısı tanıtıldı.
+* Wiro AI görev tabanlı adaptör mimarisi ve canlı triyaj sonuçları gösterildi.
+* `.env` üzerinden kolay model değişimi (`AI_MODEL`) paylaşıldı.
+* Sprint 3 hedefleri ve model maliyet/kalite test planı belirlendi.
+
+## Sprint Retrospective
+
+### İyi Gidenler
+
+* Docker ile hızlı ve sorunsuz geliştirme ortamı (hot reload)
+* Wiro AI uyumsuzluğunun özel adaptör katmanıyla başarıyla çözülmesi
+* Modüler yapı sayesinde farklı LLM modellerinin kolayca test edilebilmesi
+
+### İyileştirilecekler
+
+* Asenkron görev kuyruğu sürelerinin (5-20 saniye) mobil tarafta UX açısından optimize edilmesi
+* Wiro AI modelleri arasından maliyet/performans dengesi en iyi olan modelin canlı testlerle netleştirilmesi
