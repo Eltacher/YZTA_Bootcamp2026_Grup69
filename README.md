@@ -38,17 +38,17 @@ Sağlık / Semptom Takipçisi ve Triyaj Uygulaması, kullanıcıların semptomla
 
 ---
 
-# Sprint 1
+## Sprint 1
 
-## Sprint Notları
+### Sprint Notları
 
 Sprint 1'de backend temel mimarisi, FastAPI altyapısı, triyaj servisi, Pydantic şemaları, temel testler ve mobil uygulama ile haberleşecek API yapısı oluşturulmuştur.
 
-## Sprint İçinde Tamamlanması Tahmin Edilen Puan
+### Sprint İçinde Tamamlanması Tahmin Edilen Puan
 
 **26 Story Point**
 
-## Puan Tamamlama Mantığı
+### Puan Tamamlama Mantığı
 
 Görevler teknik zorluk, bağımlılık ve geliştirme süresi dikkate alınarak puanlanmıştır.
 
@@ -60,7 +60,7 @@ Görevler teknik zorluk, bağımlılık ve geliştirme süresi dikkate alınarak
 | Veri sözleşmeleri | 5 |
 | Guardrail sistemi | 5 |
 
-## Sprint Backlog
+### Sprint Backlog
 
 MoSCoW yöntemi kullanılarak önceliklendirme yapılmıştır.
 
@@ -69,19 +69,19 @@ MoSCoW yöntemi kullanılarak önceliklendirme yapılmıştır.
 - Could: Test otomasyonu
 - Won't: Docker, RAG
 
-## Daily Scrum
+### Daily Scrum
 
 Sprint boyunca günlük toplantılar gerçekleştirilmiş, görev dağılımı ve blocker'lar düzenli olarak takip edilmiştir.
 
-## Sprint Board Update
+### Sprint Board Update
 
 Sprint sonunda planlanan görevlerin tamamı tamamlanmıştır.
 
-## Ürün Durumu
+### Ürün Durumu
 
 Sprint 1 sonunda backend çekirdeği çalışır durumdadır.
 
-### Ekran Görüntüleri
+#### Ekran Görüntüleri
 
 <p align="center">
 <img src="images/ss_anagostergepaneli_s1.png" width="180"/>
@@ -94,93 +94,111 @@ Sprint 1 sonunda backend çekirdeği çalışır durumdadır.
 <img src="images/ss_font_s1.png" width="180"/>
 </p>
 
-## Sprint Review
+### Sprint Review
 
 - Katmanlı mimari sunuldu.
 - Triyaj modülü gösterildi.
 - API sözleşmeleri paylaşıldı.
 - Sprint 2 hedefleri belirlendi.
 
-## Sprint Retrospective
+### Sprint Retrospective
 
-### İyi Gidenler
+#### İyi Gidenler
 
 - Katmanlı mimari
 - Test odaklı geliştirme
 - Mobil ekiple uyum
 
-### İyileştirilecekler
+#### İyileştirilecekler
 
 - Dokümantasyon
 - İletişim
 - Ortak test ortamı
 
-### Sprint 2 Hedefleri
+#### Sprint 2 Hedefleri
 
 - OCR
 - RAG
 - Laboratuvar analizi
 - Docker hazırlıkları
 
-- # Sprint 2
+---
 
-## Sprint Notları
+## Sprint 2
 
-Sprint 2'de FastAPI tabanlı backend altyapısı Docker ile tam uyumlu hale getirilmiş, Wiro AI entegrasyonu tamamlanarak gerçek yapay zeka tabanlı triyaj yanıtları üretilmeye başlanmıştır. Asenkron görev kuyruğu mimarisi ve model esnekliği sağlanmıştır.
+### Sprint Notları
 
-## Sprint İçinde Tamamlanması Tahmin Edilen Puan
+Sprint 2'de FastAPI backend'i için Docker imajı ve Docker Compose tabanlı geliştirme ortamı eklenmiştir. Compose yapılandırmasında kaynak kod bağlama ve Uvicorn hot reload desteği bulunmaktadır. Triyaj servisi, Wiro AI'ın görev tabanlı API akışına uyarlanmış; görev başlatma, sonuç için durum sorgulama (polling), model parametrelerini keşfetme ve dönen JSON yanıtını `TriageResponse` şemasıyla doğrulama kodlanmıştır. Kullanılacak model ve sağlayıcı adresi ortam değişkenleri üzerinden yapılandırılabilmektedir.
+
+Belge/laboratuvar analizi halen taslak bir yer tutucu yanıt döndürmektedir. İlaç tarayıcı, gelişmiş RAG hattı ve bağımsız bir asenkron görev kuyruğu implementasyonu repository içinde bulunmamaktadır.
+
+### Sprint İçinde Tamamlanması Tahmin Edilen Puan
 
 **30 Story Point**
 
-## Puan Tamamlama Mantığı
+### Puan Tamamlama Mantığı
 
-Görevler mimari entegrasyon, üçüncü taraf API adaptör geliştirme, konteynerizasyon ve model optimizasyon süreçleri dikkate alınarak puanlanmıştır.
+Görevler mimari entegrasyon, üçüncü taraf API adaptörü, konteynerizasyon ve model yapılandırması dikkate alınarak puanlanmıştır. Aşağıdaki durumlar repository kodu ve commit geçmişine göre belirtilmiştir; tahmini puanlar tamamlanan puan beyanı değildir.
 
-| Görev | Story Point |
-| --- | --- |
-| Docker konteynerizasyonu ve hot reload | 5 |
-| Wiro AI entegrasyonu ve adaptör katmanı | 8 |
-| Gerçek triyaj ve analiz servisleri | 8 |
-| Asenkron görev kuyruğu ve model yönetimi | 5 |
-| API dokümantasyonu ve test süreçleri | 4 |
+| Planlanan görev | Story Point | Doğrulanan durum |
+|---|---:|---|
+| Docker konteynerizasyonu ve hot reload | 5 | Kod ve yapılandırma mevcut |
+| Wiro AI entegrasyonu ve adaptör katmanı | 8 | Kod mevcut |
+| Wiro tabanlı triyaj akışı ve yanıt doğrulama | 8 | Kod mevcut; canlı servis sonucu repository üzerinden doğrulanmadı |
+| Sağlayıcı görevlerini polling ile takip etme ve model yönetimi | 5 | Kod mevcut |
+| API dokümantasyonu ve test süreçleri | 4 | FastAPI/OpenAPI açıklamaları mevcut; test dosyası bulunmuyor |
 
-## Sprint Backlog
+### Daily Scrum
 
-MoSCoW yöntemi kullanılarak önceliklendirme yapılmıştır.
+Sprint 2 README notlarında günlük toplantılar yapıldığı belirtilmiştir. Repository içinde Daily Scrum kayıtları veya toplantı notları bulunmadığından ayrıntılar kod üzerinden doğrulanamamaktadır.
 
-* Must: Docker altyapısı, Wiro AI entegrasyonu, gerçek triyaj API'si
-* Should: Asenkron görev yönetimi, model esnekliği (`.env` üzerinden model değişimi)
-* Could: Mobil yükleme animasyonları için optimizasyon çalışmaları
-* Won't: Gelişmiş RAG boru hattı (Sonraki sprintlere ertelendi)
+### Sprint Backlog
 
-## Daily Scrum
+MoSCoW yöntemiyle belgelenen öncelikler:
 
-Sprint boyunca günlük toplantılar gerçekleştirilmiş; Wiro AI'ın görev tabanlı özel adaptör süreci, asenkron yanıt süreleri ve model maliyet/kalite dengeleri düzenli olarak takip edilmiştir.
+- **Must:** Docker altyapısı, Wiro AI adaptörü ve triyaj API entegrasyonu
+- **Should:** Sağlayıcı görevlerini polling ile takip etme ve ortam değişkenleri üzerinden model seçimi
+- **Could:** Mobil yükleme deneyimi için optimizasyon çalışmaları
+- **Won't:** Gelişmiş RAG hattı bu sprint kapsamında uygulanmadı
 
-## Sprint Board Update
+🔗 Sprint 2 Backlog: Bağlantı ekipten alınarak buraya eklenecek.
 
-Sprint sonunda planlanan görevlerin tamamı başarıyla tamamlanmıştır.
+### Ürün Durumu
 
-## Ürün Durumu
+Backend için Docker ve Docker Compose dosyaları mevcuttur. `/api/v1/triage/analyze` uç noktası, gerekli sağlayıcı yapılandırması sağlandığında Wiro AI görevini başlatacak, sonucu polling ile takip edecek ve yapılandırılmış triyaj yanıtını doğrulayacak şekilde uygulanmıştır. Harici servisle canlı çalışma ve model maliyet/kalite sonuçları repository içindeki dosyalardan doğrulanamamaktadır.
 
-Sprint 2 sonunda backend sistemi Docker ile ayağa kalkabilir, Wiro AI üzerinden gerçek yapay zeka destekli triyaj (poliklinik önerisi, kırmızı/sarı/yeşil kodlama, gerekçe ve acil bayrağı) yanıtları dönebilir duruma gelmiştir.
+Belge analizi uç noktası halen `draft_placeholder` durumunda sabit yanıt döndürmektedir; laboratuvar analizi, OCR ve ilaç tarayıcı tamamlanmış değildir.
 
-## Sprint Review
+### Ekran Görüntüleri
 
-* Docker ve hot reload altyapısı tanıtıldı.
-* Wiro AI görev tabanlı adaptör mimarisi ve canlı triyaj sonuçları gösterildi.
-* `.env` üzerinden kolay model değişimi (`AI_MODEL`) paylaşıldı.
-* Sprint 3 hedefleri ve model maliyet/kalite test planı belirlendi.
+### Sprint Review
 
-## Sprint Retrospective
+- Dockerfile ve hot reload destekli Docker Compose geliştirme yapılandırması eklendi.
+- Wiro AI için görev başlatma ve sonuç polling adaptörü eklendi.
+- Model parametrelerinin sağlayıcıdan keşfedilmesi ve desteklenmeyen sistem alanları için prompt yedeği eklendi.
+- Model seçimi ve sağlayıcı adresi ortam değişkenleriyle yapılandırılabilir hale getirildi.
+- Triyaj çıktısının JSON olarak ayrıştırılması ve Pydantic şemasıyla doğrulanması sürdürüldü.
 
-### İyi Gidenler
+### Sprint Retrospective
 
-* Docker ile hızlı ve sorunsuz geliştirme ortamı (hot reload)
-* Wiro AI uyumsuzluğunun özel adaptör katmanıyla başarıyla çözülmesi
-* Modüler yapı sayesinde farklı LLM modellerinin kolayca test edilebilmesi
+#### İyi Gidenler
 
-### İyileştirilecekler
+- Docker tabanlı yerel geliştirme yapısı repository'ye eklendi.
+- Sağlayıcıya özgü görev akışı ayrı bir servis katmanında toplandı.
+- Model parametrelerinin çalışma zamanında keşfedilmesiyle farklı model yapılarına uyum sağlandı.
+- Sağlayıcı ve çıktı hataları API katmanında açıklayıcı HTTP hata yanıtlarına dönüştürüldü.
 
-* Asenkron görev kuyruğu sürelerinin (5-20 saniye) mobil tarafta UX açısından optimize edilmesi
-* Wiro AI modelleri arasından maliyet/performans dengesi en iyi olan modelin canlı testlerle netleştirilmesi
+#### İyileştirilecekler
+
+- Wiro AI entegrasyonu için otomatik testler eklenmeli.
+- Polling süreleri ve hata senaryoları ölçülerek mobil kullanıcı deneyimi iyileştirilmeli.
+- Model maliyet/kalite dengesi canlı test sonuçlarıyla belgelenmeli.
+- Taslak belge analizi açıklamaları mevcut ürün durumuyla uyumlu hale getirilmeli.
+
+### Sprint 3 Hedefleri
+
+- Wiro AI adaptörü ve triyaj akışı için otomatik testler eklemek
+- Model maliyet, kalite ve yanıt süresi ölçümlerini belgelemek
+- Mobil tarafta uzun süren sağlayıcı görevleri için yükleme ve hata deneyimini iyileştirmek
+- Belge/laboratuvar analizi ve OCR kapsamını netleştirip gerçek implementasyonu planlamak
+- Sprint backlog bağlantısını ve Sprint 2 ürün ekran görüntülerini dokümantasyona eklemek
