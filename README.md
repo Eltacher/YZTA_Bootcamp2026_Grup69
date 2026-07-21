@@ -161,7 +161,7 @@ MoSCoW yöntemiyle belgelenen öncelikler:
 - **Could:** Mobil yükleme deneyimi için optimizasyon çalışmaları
 - **Won't:** Gelişmiş RAG hattı bu sprint kapsamında uygulanmadı
 
-🔗 Sprint 2 Backlog: Bağlantı ekipten alınarak buraya eklenecek.
+🔗 [Sprint 2 Backlog Panosuna Git](https://github.com/users/edateklik/projects/1)
 
 ### Ürün Durumu
 
