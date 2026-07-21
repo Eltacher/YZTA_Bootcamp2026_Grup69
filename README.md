@@ -171,6 +171,15 @@ Belge analizi uç noktası halen `draft_placeholder` durumunda sabit yanıt dön
 
 ### Ekran Görüntüleri
 
+<p align="center">
+  <img src="images/sprint2-docker-compose.png" alt="Docker Compose ile backend servisinin başarıyla başlatılması" width="45%" />
+  <img src="images/sprint2-swagger-api.png" alt="Sağlık Triyaj API Swagger arayüzü ve kullanılabilir endpointler" width="45%" />
+</p>
+
+<p align="center">
+  <img src="images/sprint2-triage-response.png" alt="Swagger üzerinden triyaj isteğinin hazırlanması ve çalıştırılması" width="70%" />
+</p>
+
 ### Sprint Review
 
 - Dockerfile ve hot reload destekli Docker Compose geliştirme yapılandırması eklendi.
