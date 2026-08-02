@@ -40,6 +40,37 @@ Uygulama ayrıca kamera, galeri veya dosya yükleme yoluyla paylaşılan tahlil,
 
 ---
 
+## 📱 Mobil Uygulama (React Native / Expo)
+
+`mobile/` klasörü içerisinde React Native (Expo SDK 54) ve TypeScript ile geliştirilmiş **Ana Odak Mobil Uygulaması** yer almaktadır.
+
+### Mobil Uygulama Özellikleri & Ekran Yapısı
+- **Ana Sayfa (Home):** Kişiselleştirilmiş sağlık özet paneli, hızlı işlem kartları (Tahlil Yükle, Semptom Anlat, İlaç Tanıt) ve ilaç saatleri takibi.
+- **Semptom Asistanı (AI Triyaj):** Metin ve sesli girdi desteği ile semptom analizi, aciliyet seviyesi değerlendirmesi ve ilgili poliklinik yönlendirmesi.
+- **Laboratuvar ve Belge Analizi:** Tahlil, reçete ve tıbbi rapor yükleme arayüzü ile kritik değerlerin görsel grafiklerle gösterimi.
+- **Akıllı İlaç Tarayıcı:** İlaç kutusu tarama, dozaj ve periyot önerileri.
+- **Kişisel Sağlık Profili:** Kan grubu, yaş, kilo, kronik rahatsızlıklar ve alerji takip sistemi.
+
+### Mobil Uygulama Kurulumu ve Çalıştırılması
+
+```bash
+# 1. Mobil klasörüne geçin
+cd mobile
+
+# 2. Bağımlılıkları yükleyin
+npm install
+
+# 3. Geliştirme sunucusunu başlatın
+npm run start
+
+# 4. Mobil cihazda canlı test (Expo Go):
+npx expo start --tunnel
+```
+
+Detaylı mobil arayüz ve mimari dokümantasyonu için [mobile/README.md](mobile/README.md) dosyasına bakabilirsiniz.
+
+---
+
 ## Sprint 1
 
 ### Sprint Notları
