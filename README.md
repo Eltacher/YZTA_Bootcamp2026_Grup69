@@ -16,10 +16,12 @@
 | Emre Kaan ÖZKAN | Developer |
 
 ### Ürün İsmi
-**Sağlık / Semptom Takipçisi ve Triyaj Uygulaması**
+**Ana Odak**
 
 ### Ürün Açıklaması
-Sağlık / Semptom Takipçisi ve Triyaj Uygulaması, kullanıcıların semptomlarını yazılı veya sesli olarak iletebildiği, yapay zeka destekli ön değerlendirme yapan ve uygun polikliniğe yönlendiren bir mobil sağlık asistanıdır. Uygulama tanı koymaz ve ilaç önermez.
+Ana Odak, kullanıcıların sağlıkla ilgili belirsizliklerini azaltmayı ve doğru sağlık birimine daha bilinçli şekilde yönelmelerini sağlamayı amaçlayan yapay zekâ destekli bir mobil sağlık asistanıdır. Kullanıcının yazılı veya sesli olarak ilettiği belirtileri analiz ederek uygun poliklinik ve aciliyet seviyesi hakkında açıklamalı yönlendirme sunar.
+
+Uygulama ayrıca kamera, galeri veya dosya yükleme yoluyla paylaşılan tahlil, reçete ve ilaç kutusu görsellerini inceleyerek anlaşılır bir özet, önemli bulgular ve danışılabilecek ilgili sağlık bölümünü belirtir. Ana Odak tanı koymaz, ilaç veya doz önermez ve sağlık uzmanının yerini almaz; kullanıcıyı doğru zamanda uygun sağlık hizmetine yönlendirmeyi amaçlar.
 
 ### Ürün Özellikleri
 - Yapay zeka destekli semptom analizi
