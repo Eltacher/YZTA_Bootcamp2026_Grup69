@@ -1,31 +1,14 @@
 """Triyaj uç noktaları — API (router) katmanı."""
 
-from functools import lru_cache
-
 from fastapi import APIRouter, Depends, HTTPException, status
 
-from app.core.config import get_settings
+from app.api.dependencies import get_ai_service
 from app.schemas.triage_schema import TriageRequest, TriageResponse
 from app.services.ai_service import AIService, AIServiceError
 
 # Sürüm öneki (/api/v1) main.py'de merkezî olarak eklenir; bu modül yalnızca
 # kendi alan adını (/triage) bilir.
 router = APIRouter(prefix="/triage", tags=["Triyaj"])
-
-
-@lru_cache
-def _build_ai_service() -> AIService:
-    """AIService'i ilk istekte bir kez kurar, sonraki isteklerde yeniden kullanır."""
-    return AIService(get_settings())
-
-
-def get_ai_service() -> AIService:
-    try:
-        return _build_ai_service()
-    except AIServiceError as exc:  # örn. AI_API_KEY eksik -> yapılandırma hatası
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(exc)
-        ) from exc
 
 
 @router.post(

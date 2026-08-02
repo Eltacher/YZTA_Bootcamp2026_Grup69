@@ -1,5 +1,5 @@
 # Temel bağımlılıklar — sürümler PyPI güncel sürümlerine sabitlenmiştir
-# (httpx: 12.07.2026, diğerleri: 02.07.2026)
+# (Pillow/pillow-heif: 02.08.2026, diğer tarihler ilgili paket satırlarında)
 
 fastapi==0.139.0
 uvicorn[standard]==0.49.0
@@ -8,3 +8,14 @@ pydantic==2.13.4
 
 # .env dosyasından AI_API_KEY gibi gizli değerleri okumak için
 python-dotenv==1.2.2
+
+# Belge analizi uç noktasının multipart (UploadFile) dosya yüklemesi için
+python-multipart==0.0.32
+
+# Yüklenen PDF belgelerinden metin çıkarmak için (bkz. ai_service._extract_pdf_text)
+pypdf==6.14.2
+
+# Mobil kameraların ürettiği görselleri doğrulamak, EXIF yönünü düzeltmek ve
+# iPhone HEIC/HEIF fotoğraflarını modelin desteklediği JPEG'e dönüştürmek için
+Pillow==12.3.0
+pillow-heif==1.5.0
