@@ -34,6 +34,7 @@ class DocumentAnalysisResponse(BaseModel):
                         "Sonuçları iç hastalıkları (dahiliye) hekiminize gösterin.",
                         "Kontrol randevunuza giderken önceki tahlillerinizi de götürün.",
                     ],
+                    "recommended_department": "Dahiliye",
                 }
             ]
         }
@@ -62,5 +63,12 @@ class DocumentAnalysisResponse(BaseModel):
         description=(
             "Yönlendirme önerileri (ör. ilgili poliklinik). Tanı ve tedavi/ilaç "
             "önerisi içermez. Öneri yoksa boş dizi döner."
+        ),
+    )
+    recommended_department: str = Field(
+        default="Aile Hekimliği",
+        description=(
+            "Belge veya ilaç hakkında danışılabilecek birincil poliklinik. İlaç kutusundaki "
+            "bilgilerden güvenli biçimde çıkarım yapılamıyorsa Aile Hekimliği döner."
         ),
     )

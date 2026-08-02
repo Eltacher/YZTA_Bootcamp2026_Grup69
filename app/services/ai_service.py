@@ -163,6 +163,15 @@ KESİN KURALLAR:
    gösterin"); tedavi, ilaç veya doz önerisi içeremez.
 7. Belgede hayati risk işaret eden kritik değerler varsa recommendations içinde vakit
    kaybetmeden hekime ya da acil servise başvurulması gerektiğini belirt.
+8. recommended_department alanında, belge hakkında danışılabilecek en uygun BİRİNCİL
+   polikliniği yaz (ör. Dahiliye, Kardiyoloji, Göğüs Hastalıkları, Endokrinoloji).
+   İlaç kutusu veya reçetede kullanım alanı açıkça belirtilmişse yalnızca bu görünür
+   bilgiye dayan. İlaç birden fazla alanda kullanılıyorsa ya da güvenli çıkarım
+   yapılamıyorsa "Aile Hekimliği" yaz ve recommendations içinde eczacıya veya reçeteyi
+   düzenleyen hekime danışılmasını belirt. Bu alan ilacın kullanıcı için uygun olduğu
+   anlamına gelmez ve ilaç kullanma önerisine dönüştürülemez.
+9. Yalnızca kutusuz tablet/kapsül görünüşünden ilaç adı, kullanım amacı veya poliklinik
+   tahmini yapma; document_type "Belirsiz", recommended_department "Aile Hekimliği" olsun.
 
 document_type için YALNIZCA şu değerlerden birini kullan:
 "Reçete", "Tahlil Sonucu", "Rapor", "Görüntüleme Raporu", "Epikriz", "Diğer", "Belirsiz".
@@ -172,7 +181,7 @@ Yanıtın, aşağıdaki şemaya birebir uyan GEÇERLİ TEK BİR JSON NESNESİ ol
 JSON dışında hiçbir şey yazma: markdown yok, kod bloğu yok, açıklama yok.
 Tüm metin alanlarını Türkçe yaz. key_findings ve recommendations en fazla 6 madde içersin.
 
-{"document_type": "<belge türü>", "summary": "<2-4 cümlelik sade özet>", "key_findings": ["<önemli bulgu>"], "recommendations": ["<yönlendirme>"]}"""
+{"document_type": "<belge türü>", "summary": "<2-4 cümlelik sade özet>", "key_findings": ["<önemli bulgu>"], "recommendations": ["<yönlendirme>"], "recommended_department": "<birincil poliklinik>"}"""
 
 # Görsel gönderilirken prompt alanına yazılacak kullanıcı mesajı; belgenin
 # kendisi ayrı bir alanda (inputImage) taşınır.

@@ -43,6 +43,7 @@ class FakeAIService:
             summary="Mobil yükleme testi başarıyla işlendi.",
             key_findings=[],
             recommendations=[],
+            recommended_department="Dahiliye",
         )
 
 
@@ -121,6 +122,7 @@ class MobileUploadEndpointTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(self.ai_service.last_content, content)
         self.assertEqual(self.ai_service.last_media_type, "image/jpeg")
+        self.assertEqual(response.json()["recommended_department"], "Dahiliye")
 
     async def test_react_native_heic_upload_is_accepted(self) -> None:
         content = make_image("HEIF")
