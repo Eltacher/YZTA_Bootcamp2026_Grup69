@@ -196,6 +196,16 @@ MoSCoW yöntemiyle belgelenen öncelikler:
 
 🔗 [Sprint 2 Backlog Panosuna Git](https://github.com/users/edateklik/projects/1)
 
+### Sprint Board Update
+
+README güncellemesi sırasında herkese açık Sprint 2 panosunda **3 Todo**, **0 In Progress** ve **2 Done** kartı görünmektedir. Güncel durumu aşağıdaki bağlantıdan takip edebilirsiniz.
+
+<p align="center">
+  <a href="https://github.com/users/edateklik/projects/1">
+    <img src="images/sprint2-board.png" alt="Sprint 2 GitHub Projects panosu: Todo, In Progress ve Done sütunları" width="90%" />
+  </a>
+</p>
+
 ### Ürün Durumu
 
 Backend için Docker ve Docker Compose dosyaları mevcuttur. `/api/v1/triage/analyze` uç noktası, gerekli sağlayıcı yapılandırması sağlandığında Wiro AI görevini başlatacak, sonucu polling ile takip edecek ve yapılandırılmış triyaj yanıtını doğrulayacak şekilde uygulanmıştır. Harici servisle canlı çalışma ve model maliyet/kalite sonuçları repository içindeki dosyalardan doğrulanamamaktadır.
@@ -250,11 +260,11 @@ Belge analizi uç noktası halen `draft_placeholder` durumunda sabit yanıt dön
 
 ### Sprint Notları
 
-Sprint 3'te tıbbi belge ve reçete analizi yetenekleri sisteme kazandırılmış; kamera ve galeri yüklemeleri için genişletilmiş dosya formatı desteği (JPEG, PNG, HEIC, HEIF) ve otomatik format dönüştürme altyapısı tamamlanmıştır. Ayrıca PDF desteği, dosya boyutu/güvenlik kontrolleri ve mobil entegrasyon süreçleri devreye alınmıştır.
+Sprint 3'te tıbbi belge ve reçete analizi yetenekleri backend'e kazandırılmış; JPEG, PNG, HEIC ve HEIF görselleri için dosya doğrulama ve HEIC/HEIF'ten JPEG'e otomatik dönüşüm altyapısı eklenmiştir. Metin katmanlı PDF desteği, 10 MB dosya sınırı, çözünürlük kontrolleri ve mobil istemciyle uyumlu multipart yükleme sözleşmesi uygulanmıştır. Mobil tarafta API istemcisi, yükleme durumu ve analiz sonucunu gösteren örnek akış bulunmaktadır; gerçek kamera/galeri/dosya seçici entegrasyonu henüz tamamlanmamıştır.
 
 ### Sprint İçinde Tamamlanması Tahmin Edilen Puan
 
-25 Story Point
+**25 Story Point**
 
 ### Puan Tamamlama Mantığı
 
@@ -266,49 +276,55 @@ Görevler çoklu format desteği, otomatik görsel dönüştürme, güvenlik val
 | HEIC/HEIF otomatik JPEG dönüşüm ve çoklu format desteği | 5 |
 | PDF metin katmanı işleme ve 10 MB dosya/güvenlik sınırları | 5 |
 | Otomatik test senaryoları (13 senaryo) ve hata yönetimi | 4 |
-| Mobil timeout ve yükleme ekranı entegrasyon rehberliği | 3 |
+| Mobil API istemcisi, yükleme durumu ve örnek sonuç akışı | 3 |
 
 ### Sprint Backlog
 
 MoSCoW yöntemi kullanılarak önceliklendirme yapılmıştır.
 
 * **Must:** Belge analiz endpoint'i, HEIC/JPEG dönüşüm altyapısı, 10 MB boyut ve güvenlik validasyonları
-* **Should:** PDF desteği, 13 senaryoluk otomatik test dosyası, mobil timeout (140 sn) uyumu
-* **Could:** Mobil taraf için gelişmiş analiz durumu bildirimleri
+* **Should:** Metin katmanlı PDF desteği, 13 senaryoluk otomatik test dosyası ve mobil API istemcisi
+* **Could:** Gerçek kamera/galeri/dosya seçici, açık timeout/iptal yönetimi ve gelişmiş analiz durumu bildirimleri
 * **Won't:** Optik Karakter Tanıma (OCR) için yerel model yedekleme (Sonraki sprintlere ertelendi)
 
 ### Daily Scrum
 
-Sprint boyunca günlük toplantılar gerçekleştirilmiş; iOS cihazlarda çekilen HEIC fotoğrafların sunucu taraflı dönüştürme maliyetleri, Wiro AI kuyruk yoğunluğuna bağlı olarak 30-60 saniyeyi bulabilen yanıt süreleri ve mobil UX optimizasyonları düzenli olarak takip edilmiştir.
+Repository içinde Daily Scrum tutanakları bulunmadığından toplantı ayrıntıları kod üzerinden doğrulanamamaktadır. Commit geçmişinde HEIC/HEIF uyumluluğu, belge güvenliği, Wiro AI entegrasyonu ve mobil yükleme sözleşmesi üzerinde çalışıldığı görülmektedir.
 
 ### Sprint Board Update
 
-Sprint sonunda planlanan görevlerin tamamı başarıyla tamamlanmıştır.
+Herkese açık GitHub Projects sayfasında yalnızca [Sprint 2 Backlog panosu](https://github.com/users/edateklik/projects/1) bulunmaktadır; ayrı bir Sprint 3 panosu veya doğrulanabilir tamamlanma kaydı henüz görünmemektedir. Bu nedenle aşağıdaki ürün durumu repository kodu ve commit geçmişine göre verilmiştir.
 
 ### Ürün Durumu
 
-Sprint 3 sonunda backend sistemi; tıbbi belge ve reçeteleri analiz edebilir, iPhone cihazlardan gelen HEIC/HEIF uzantılı görselleri otomatik olarak JPEG'e çevirebilir, metin katmanlı PDF dosyalarını işleyebilir ve bozuk/büyük dosyaları AI kuyruğuna girmeden güvenli bir şekilde reddedebilir duruma gelmiştir.
+Sprint 3 sonunda backend sistemi; tıbbi belge ve reçeteleri analiz edebilir, iPhone cihazlardan gelen HEIC/HEIF görsellerini JPEG'e çevirebilir, metin katmanlı PDF dosyalarını işleyebilir ve bozuk, aşırı çözünürlüklü veya 10 MB sınırını aşan dosyaları AI çağrısından önce reddedebilir duruma gelmiştir.
+
+Mobil uygulamada belge analiz API'sine multipart istek gönderen istemci, yükleme göstergesi ve yapılandırılmış sonucu gösteren ekran mevcuttur. Ancak ekran şu anda örnek bir dosya URI'si kullanmakta; gerçek cihaz kamera/galeri/dosya seçimi ve açık istemci timeout yönetimi kodda bulunmamaktadır.
 
 ### Ekran Görüntüleri
 
-*[Ekran görüntüleri alanı]*
+<p align="center">
+  <img src="mobile/docs/screenshots/profile_screen.png" alt="Ana Odak mobil uygulaması ana ekranı ve sağlık asistanı hızlı işlemleri" width="32%" />
+  <img src="mobile/docs/screenshots/home_screen.png" alt="Laboratuvar ve tahlil belgesi yükleme ile örnek analiz ekranı" width="32%" />
+</p>
 
 ### Sprint Review
 
 * `POST /api/v1/document/analyze` endpoint'i ve analiz yetenekleri tanıtıldı.
 * HEIC/HEIF formatlarının otomatik JPEG dönüşüm mekanizması gösterildi.
 * 10 MB dosya sınırı ve erken aşama güvenlik/bozuk dosya reddetme mantığı paylaşıldı.
-* 13 senaryoluk otomatik test dosyası ve mobil timeout (140 sn) / yükleme ekranı gereksinimleri aktarıldı.
+* 13 senaryoluk otomatik test dosyası, mobil API istemcisi, yükleme göstergesi ve sonuç ekranı örneği aktarıldı.
 
 ### Sprint Retrospective
 
 #### İyi Gidenler
 
-* HEIC/HEIF formatlarının sunucu tarafında otomatik JPEG'e çevrilmesi sayesinde mobil tarafta yaşanabilecek uyumsuzlukların tamamen ortadan kaldırılması
+* HEIC/HEIF formatlarının sunucu tarafında otomatik JPEG'e çevrilmesiyle mobil uyumluluk riskinin azaltılması
 * Bozuk veya aşırı çözünürlüklü dosyaların AI servislerine gönderilmeden erken aşamada reddedilerek kaynak tasarrufu sağlanması
 * 13 senaryoluk kapsamlı otomatik test dosyası sayesinde canlı kontrollerin hızlanması
 
 #### İyileştirilecekler
 
-* Wiro AI yoğunluğuna bağlı olarak 30–60 saniyeye çıkabilen analiz sürelerinin mobil kullanıcı deneyimi (UX) açısından daha akıcı yönetilmesi
+* Wiro AI analiz sürelerinin ölçülmesi; mobil istemciye açık timeout, iptal ve yeniden deneme davranışlarının eklenmesi
+* Örnek dosya URI'si yerine gerçek kamera/galeri/dosya seçici entegrasyonunun tamamlanması
 * Büyük boyutlu PDF ve görsel yüklemelerinde bellek (RAM) tüketiminin izlenmesi ve optimize edilmesi
