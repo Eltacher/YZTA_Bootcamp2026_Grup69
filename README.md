@@ -244,3 +244,71 @@ Belge analizi uç noktası halen `draft_placeholder` durumunda sabit yanıt dön
 - Mobil tarafta uzun süren sağlayıcı görevleri için yükleme ve hata deneyimini iyileştirmek
 - Belge/laboratuvar analizi ve OCR kapsamını netleştirip gerçek implementasyonu planlamak
 - Sprint backlog bağlantısını ve Sprint 2 ürün ekran görüntülerini dokümantasyona eklemek
+
+
+## Sprint 3
+
+### Sprint Notları
+
+Sprint 3'te tıbbi belge ve reçete analizi yetenekleri sisteme kazandırılmış; kamera ve galeri yüklemeleri için genişletilmiş dosya formatı desteği (JPEG, PNG, HEIC, HEIF) ve otomatik format dönüştürme altyapısı tamamlanmıştır. Ayrıca PDF desteği, dosya boyutu/güvenlik kontrolleri ve mobil entegrasyon süreçleri devreye alınmıştır.
+
+### Sprint İçinde Tamamlanması Tahmin Edilen Puan
+
+25 Story Point
+
+### Puan Tamamlama Mantığı
+
+Görevler çoklu format desteği, otomatik görsel dönüştürme, güvenlik validasyonları, hata yönetimi ve mobil entegrasyon gereksinimleri dikkate alınarak puanlanmıştır.
+
+| Görev | Story Point |
+| --- | --- |
+| Belge ve reçete analizi endpoint geliştirme (`POST /api/v1/document/analyze`) | 8 |
+| HEIC/HEIF otomatik JPEG dönüşüm ve çoklu format desteği | 5 |
+| PDF metin katmanı işleme ve 10 MB dosya/güvenlik sınırları | 5 |
+| Otomatik test senaryoları (13 senaryo) ve hata yönetimi | 4 |
+| Mobil timeout ve yükleme ekranı entegrasyon rehberliği | 3 |
+
+### Sprint Backlog
+
+MoSCoW yöntemi kullanılarak önceliklendirme yapılmıştır.
+
+* **Must:** Belge analiz endpoint'i, HEIC/JPEG dönüşüm altyapısı, 10 MB boyut ve güvenlik validasyonları
+* **Should:** PDF desteği, 13 senaryoluk otomatik test dosyası, mobil timeout (140 sn) uyumu
+* **Could:** Mobil taraf için gelişmiş analiz durumu bildirimleri
+* **Won't:** Optik Karakter Tanıma (OCR) için yerel model yedekleme (Sonraki sprintlere ertelendi)
+
+### Daily Scrum
+
+Sprint boyunca günlük toplantılar gerçekleştirilmiş; iOS cihazlarda çekilen HEIC fotoğrafların sunucu taraflı dönüştürme maliyetleri, Wiro AI kuyruk yoğunluğuna bağlı olarak 30-60 saniyeyi bulabilen yanıt süreleri ve mobil UX optimizasyonları düzenli olarak takip edilmiştir.
+
+### Sprint Board Update
+
+Sprint sonunda planlanan görevlerin tamamı başarıyla tamamlanmıştır.
+
+### Ürün Durumu
+
+Sprint 3 sonunda backend sistemi; tıbbi belge ve reçeteleri analiz edebilir, iPhone cihazlardan gelen HEIC/HEIF uzantılı görselleri otomatik olarak JPEG'e çevirebilir, metin katmanlı PDF dosyalarını işleyebilir ve bozuk/büyük dosyaları AI kuyruğuna girmeden güvenli bir şekilde reddedebilir duruma gelmiştir.
+
+### Ekran Görüntüleri
+
+*[Ekran görüntüleri alanı]*
+
+### Sprint Review
+
+* `POST /api/v1/document/analyze` endpoint'i ve analiz yetenekleri tanıtıldı.
+* HEIC/HEIF formatlarının otomatik JPEG dönüşüm mekanizması gösterildi.
+* 10 MB dosya sınırı ve erken aşama güvenlik/bozuk dosya reddetme mantığı paylaşıldı.
+* 13 senaryoluk otomatik test dosyası ve mobil timeout (140 sn) / yükleme ekranı gereksinimleri aktarıldı.
+
+### Sprint Retrospective
+
+#### İyi Gidenler
+
+* HEIC/HEIF formatlarının sunucu tarafında otomatik JPEG'e çevrilmesi sayesinde mobil tarafta yaşanabilecek uyumsuzlukların tamamen ortadan kaldırılması
+* Bozuk veya aşırı çözünürlüklü dosyaların AI servislerine gönderilmeden erken aşamada reddedilerek kaynak tasarrufu sağlanması
+* 13 senaryoluk kapsamlı otomatik test dosyası sayesinde canlı kontrollerin hızlanması
+
+#### İyileştirilecekler
+
+* Wiro AI yoğunluğuna bağlı olarak 30–60 saniyeye çıkabilen analiz sürelerinin mobil kullanıcı deneyimi (UX) açısından daha akıcı yönetilmesi
+* Büyük boyutlu PDF ve görsel yüklemelerinde bellek (RAM) tüketiminin izlenmesi ve optimize edilmesi
