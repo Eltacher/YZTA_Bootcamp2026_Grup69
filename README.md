@@ -44,6 +44,10 @@ Uygulama ayrıca kamera, galeri veya dosya yükleme yoluyla paylaşılan tahlil,
 
 `mobile/` klasörü içerisinde React Native (Expo SDK 54) ve TypeScript ile geliştirilmiş **Ana Odak Mobil Uygulaması** yer almaktadır.
 
+🔗 **Bağımsız mobil uygulama kaynak deposu:** [philisterbt/Ana-Odak](https://github.com/philisterbt/Ana-Odak)
+
+Mobil uygulamanın bağımsız geliştirme deposundaki kaynaklar ana projeye `mobile/` klasörü altında entegre edilmiştir. Backend ile birlikte çalıştırılacak güncel bütünleşik sürüm bu repository içindeki `mobile/` klasörüdür.
+
 ### Mobil Uygulama Özellikleri & Ekran Yapısı
 - **Ana Sayfa (Home):** Kişiselleştirilmiş sağlık özet paneli, hızlı işlem kartları (Tahlil Yükle, Semptom Anlat, İlaç Tanıt) ve ilaç saatleri takibi.
 - **Semptom Asistanı (AI Triyaj):** Metin ve sesli girdi desteği ile semptom analizi, aciliyet seviyesi değerlendirmesi ve ilgili poliklinik yönlendirmesi.
