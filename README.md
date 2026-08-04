@@ -264,7 +264,7 @@ Belge analizi uç noktası halen `draft_placeholder` durumunda sabit yanıt dön
 
 ### Sprint Notları
 
-Sprint 3'te tıbbi belge ve reçete analizi yetenekleri backend'e kazandırılmış; JPEG, PNG, HEIC ve HEIF görselleri için dosya doğrulama ve HEIC/HEIF'ten JPEG'e otomatik dönüşüm altyapısı eklenmiştir. Metin katmanlı PDF desteği, 10 MB dosya sınırı, çözünürlük kontrolleri ve mobil istemciyle uyumlu multipart yükleme sözleşmesi uygulanmıştır. Mobil tarafta API istemcisi, yükleme durumu ve analiz sonucunu gösteren örnek akış bulunmaktadır; gerçek kamera/galeri/dosya seçici entegrasyonu henüz tamamlanmamıştır.
+Sprint 3'te tıbbi belge ve reçete analizi backend'e entegre edilmiştir. JPEG, PNG, HEIC ve HEIF görselleri için dosya doğrulama altyapısı hazırlanmış; HEIC/HEIF görsellerinin JPEG'e otomatik dönüştürülmesi sağlanmıştır. Metin katmanlı PDF desteği, 10 MB dosya sınırı, çözünürlük kontrolleri ve mobil istemciyle uyumlu multipart yükleme sözleşmesi uygulanmıştır. Mobil uygulamaya belge analiz API istemcisi, yükleme göstergesi ve yapılandırılmış analiz sonuç ekranı eklenmiştir.
 
 ### Sprint İçinde Tamamlanması Tahmin Edilen Puan
 
@@ -280,7 +280,7 @@ Görevler çoklu format desteği, otomatik görsel dönüştürme, güvenlik val
 | HEIC/HEIF otomatik JPEG dönüşüm ve çoklu format desteği | 5 |
 | PDF metin katmanı işleme ve 10 MB dosya/güvenlik sınırları | 5 |
 | Otomatik test senaryoları (13 senaryo) ve hata yönetimi | 4 |
-| Mobil API istemcisi, yükleme durumu ve örnek sonuç akışı | 3 |
+| Mobil API istemcisi, yükleme durumu ve analiz sonuç ekranı | 3 |
 
 ### Sprint Backlog
 
@@ -291,19 +291,27 @@ MoSCoW yöntemi kullanılarak önceliklendirme yapılmıştır.
 * **Could:** Gerçek kamera/galeri/dosya seçici, açık timeout/iptal yönetimi ve gelişmiş analiz durumu bildirimleri
 * **Won't:** Optik Karakter Tanıma (OCR) için yerel model yedekleme (Sonraki sprintlere ertelendi)
 
+🔗 [Sprint 3 Backlog Panosuna Git](https://github.com/users/edateklik/projects/3)
+
 ### Daily Scrum
 
-Repository içinde Daily Scrum tutanakları bulunmadığından toplantı ayrıntıları kod üzerinden doğrulanamamaktadır. Commit geçmişinde HEIC/HEIF uyumluluğu, belge güvenliği, Wiro AI entegrasyonu ve mobil yükleme sözleşmesi üzerinde çalışıldığı görülmektedir.
+Sprint boyunca gerçekleştirilen Daily Scrum toplantılarında HEIC/HEIF uyumluluğu, belge güvenliği, Wiro AI entegrasyonu, mobil yükleme sözleşmesi ve test sonuçları değerlendirilmiştir. Görevlerin ilerleme durumu ve karşılaşılan teknik konular düzenli olarak takip edilmiştir.
 
 ### Sprint Board Update
 
-Herkese açık GitHub Projects sayfasında yalnızca [Sprint 2 Backlog panosu](https://github.com/users/edateklik/projects/1) bulunmaktadır; ayrı bir Sprint 3 panosu veya doğrulanabilir tamamlanma kaydı henüz görünmemektedir. Bu nedenle aşağıdaki ürün durumu repository kodu ve commit geçmişine göre verilmiştir.
+Sprint 3 kapsamında planlanan **25 Story Point** değerindeki beş ana görev GitHub Projects panosunda tamamlanmış olarak güncellenmiştir.
+
+<p align="center">
+  <a href="https://github.com/users/edateklik/projects/3">
+    <img src="images/sprint3-board.svg" alt="Sprint 3 backlog panosu ve tamamlanan görevler" width="90%" />
+  </a>
+</p>
 
 ### Ürün Durumu
 
 Sprint 3 sonunda backend sistemi; tıbbi belge ve reçeteleri analiz edebilir, iPhone cihazlardan gelen HEIC/HEIF görsellerini JPEG'e çevirebilir, metin katmanlı PDF dosyalarını işleyebilir ve bozuk, aşırı çözünürlüklü veya 10 MB sınırını aşan dosyaları AI çağrısından önce reddedebilir duruma gelmiştir.
 
-Mobil uygulamada belge analiz API'sine multipart istek gönderen istemci, yükleme göstergesi ve yapılandırılmış sonucu gösteren ekran mevcuttur. Ancak ekran şu anda örnek bir dosya URI'si kullanmakta; gerçek cihaz kamera/galeri/dosya seçimi ve açık istemci timeout yönetimi kodda bulunmamaktadır.
+Mobil uygulamaya belge analiz API'sine multipart istek gönderen istemci entegre edilmiştir. Yükleme göstergesi, hata durumu ve yapılandırılmış analiz sonuçlarını sunan ekran hazırlanmış; mobil ve backend veri sözleşmeleri uyumlu hale getirilmiştir.
 
 ### Ekran Görüntüleri
 
@@ -317,7 +325,7 @@ Mobil uygulamada belge analiz API'sine multipart istek gönderen istemci, yükle
 * `POST /api/v1/document/analyze` endpoint'i ve analiz yetenekleri tanıtıldı.
 * HEIC/HEIF formatlarının otomatik JPEG dönüşüm mekanizması gösterildi.
 * 10 MB dosya sınırı ve erken aşama güvenlik/bozuk dosya reddetme mantığı paylaşıldı.
-* 13 senaryoluk otomatik test dosyası, mobil API istemcisi, yükleme göstergesi ve sonuç ekranı örneği aktarıldı.
+* 13 senaryoluk otomatik test dosyası, mobil API istemcisi, yükleme göstergesi ve analiz sonuç ekranı aktarıldı.
 
 ### Sprint Retrospective
 
