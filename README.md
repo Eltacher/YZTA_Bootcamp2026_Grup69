@@ -202,7 +202,11 @@ MoSCoW yöntemiyle belgelenen öncelikler:
 
 ### Sprint Board Update
 
-README güncellemesi sırasında herkese açık Sprint 2 panosunda **3 Todo**, **0 In Progress** ve **2 Done** kartı görünmektedir. Güncel durumu aşağıdaki bağlantıdan takip edebilirsiniz.
+README güncellemesi sırasında herkese açık Sprint 2 panosunda **3 Todo**, **0 In Progress** ve **2 Done** kartı görünmektedir. Güncel durumu yukarıdaki pano bağlantısından takip edebilirsiniz.
+
+#### Sprint Board Ekran Görüntüsü
+
+Sprint board ekran görüntüsü, görevlerin **Todo**, **In Progress** ve **Done** sütunlarındaki sprint sonu dağılımını göstermektedir.
 
 <p align="center">
   <a href="https://github.com/users/edateklik/projects/1">
@@ -301,9 +305,13 @@ Sprint boyunca gerçekleştirilen Daily Scrum toplantılarında HEIC/HEIF uyumlu
 
 Sprint 3 kapsamında planlanan **25 Story Point** değerindeki beş ana görev GitHub Projects panosunda tamamlanmış olarak güncellenmiştir.
 
+#### Sprint Board Ekran Görüntüsü
+
+Aşağıdaki gerçek GitHub Projects ekran görüntüsünde Sprint 3 için tamamlanan beş görev **Done** sütununda görülmektedir.
+
 <p align="center">
   <a href="https://github.com/users/edateklik/projects/3">
-    <img src="images/sprint3-board.svg" alt="Sprint 3 backlog panosu ve tamamlanan görevler" width="90%" />
+    <img src="images/sprint3-board.png" alt="Sprint 3 GitHub Projects panosunda Done sütunundaki beş tamamlanmış görev" width="38%" />
   </a>
 </p>
 
