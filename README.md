@@ -311,7 +311,7 @@ Aşağıdaki gerçek GitHub Projects ekran görüntüsünde Sprint 3 için tamam
 
 <p align="center">
   <a href="https://github.com/users/edateklik/projects/3">
-    <img src="images/sprint3-board.png" alt="Sprint 3 GitHub Projects panosunda Done sütunundaki beş tamamlanmış görev" width="38%" />
+    <img src="images/sprint3-board.png" alt="Sprint 3 GitHub Projects panosunda Todo, In Progress ve Done sütunları ile beş tamamlanmış görev" width="90%" />
   </a>
 </p>
 
